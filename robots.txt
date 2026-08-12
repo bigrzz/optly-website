@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://optly.awakyn.ai/sitemap.xml
