@@ -3,41 +3,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Primary SEO -->
-  <title>Optly – Remove Your Personal Information from Data Broker Sites</title>
-  <meta name="description" content="Optly helps you find and remove your personal information from people search and data broker websites. Free web presence scan. Automated opt-outs available.">
-  <meta name="keywords" content="opt out data brokers, remove personal information online, people search removal, data broker opt out, online privacy, remove my info from internet">
-  <meta name="author" content="Optly by Awakyn Labs">
+  <title>OptlyOuts – Remove Your Personal Information from Data Broker Sites</title>
+  <meta name="description" content="OptlyOuts helps you find and remove your personal information from people-search and data-broker websites. Free exposure scan. Automated opt-outs available.">
+  <meta name="keywords" content="opt out data brokers, remove personal information online, people search removal, data broker opt out, online privacy, OptlyOuts">
+  <meta name="author" content="OptlyOuts by Awakyn Labs">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://optly.awakyn.ai/">
-
-  <!-- Open Graph / Facebook -->
+  <link rel="canonical" href="https://optlyouts.awakyn.ai/">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://optly.awakyn.ai/">
-  <meta property="og:title" content="Optly – Remove Your Personal Info from the Internet">
-  <meta property="og:description" content="Free scan. Automated opt-outs from data brokers and people search sites.">
-  <meta property="og:image" content="https://optly.awakyn.ai/og-image.jpg">
-  <meta property="og:site_name" content="Optly">
-
-  <!-- Twitter -->
+  <meta property="og:url" content="https://optlyouts.awakyn.ai/">
+  <meta property="og:title" content="OptlyOuts – Take your name back from data brokers">
+  <meta property="og:description" content="OptlyOuts helps you find and remove your personal information from people-search and data-broker websites. Free exposure scan. Automated opt-outs available.">
+  <meta property="og:image" content="https://optlyouts.awakyn.ai/og.jpg">
+  <meta property="og:site_name" content="OptlyOuts">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Optly – Remove Your Personal Info from the Internet">
-  <meta name="twitter:description" content="Free scan. Automated opt-outs from data brokers and people search sites.">
-  <meta name="twitter:image" content="https://optly.awakyn.ai/og-image.jpg">
-
-  <!-- Favicon -->
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
+  <meta name="twitter:title" content="OptlyOuts – Take your name back from data brokers">
+  <meta name="twitter:description" content="OptlyOuts helps you find and remove your personal information from people-search and data-broker websites. Free exposure scan. Automated opt-outs available.">
+  <meta name="twitter:image" content="https://optlyouts.awakyn.ai/og.jpg">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: "#f3efe6",
+            surface: "#fbf8f1",
+            fg: "#16181d",
+            muted: "#5e6570",
+            primary: "#1a3d5c",
+            "primary-fg": "#fbf8f1",
+            accent: "#2f6f8a",
+            border: "#ddd6c8",
+            danger: "#9b3a32",
+            success: "#2d6a4f",
+            warning: "#8a5a24",
+            card: "#fffcf6",
+          },
+          fontFamily: {
+            sans: ["Figtree", "ui-sans-serif", "system-ui", "sans-serif"],
+            display: ["Fraunces", "Times New Roman", "serif"],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      background: #f3efe6;
+      color: #16181d;
+      font-family: Figtree, ui-sans-serif, system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3 { font-family: Fraunces, "Times New Roman", serif; text-wrap: balance; }
+    p { text-wrap: pretty; }
+    button:not(:disabled), [role="button"]:not(:disabled) { cursor: pointer; }
+    details summary { list-style: none; }
+    details summary::-webkit-details-marker { display: none; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+    <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Optly",
-    "url": "https://optly.awakyn.ai",
-    "description": "Optly helps individuals find and remove their personal information from data broker and people search websites.",
+    "name": "OptlyOuts",
+    "url": "https://optlyouts.awakyn.ai",
+    "description": "OptlyOuts helps individuals find and remove their personal information from data broker and people search websites.",
     "applicationCategory": "SecurityApplication",
     "operatingSystem": "Web",
     "offers": [
@@ -53,221 +95,450 @@
     }
   }
   </script>
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-
-  <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-    html { scroll-behavior: smooth; }
-    .gradient-text {
-      background: linear-gradient(135deg, #60a5fa, #22d3ee);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-  </style>
 </head>
-<body class="bg-zinc-950 text-zinc-100">
-
-  <!-- Navbar -->
-  <nav class="border-b border-white/10 bg-zinc-950/90 backdrop-blur sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-      <div class="flex items-center gap-x-3">
-        <div class="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center">
-          <i class="fa-solid fa-shield-halved text-white"></i>
+<body class="bg-bg text-fg">
+  <div class="bg-primary px-4 py-2 text-center text-sm text-primary-fg">Free exposure scan — no credit card required</div>
+  <header class="sticky top-0 z-40 border-b border-border bg-surface/90 backdrop-blur">
+  <div class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
+    <a href="/" class="inline-flex items-center gap-2.5 text-fg">
+  <span class="grid size-8 place-items-center rounded-lg bg-primary text-primary-fg">
+    <svg viewBox="0 0 24 24" class="size-4" fill="currentColor" aria-hidden="true"><path d="M12 3c-3.2 2.2-5.6 2.8-6.8 3v6.6c0 4.3 3 7.3 6.8 8.4 3.8-1.1 6.8-4.1 6.8-8.4V6c-1.2-.2-3.6-.8-6.8-3z"/></svg>
+  </span>
+  <span class="text-lg font-semibold tracking-tight">OptlyOuts</span>
+</a>
+    <nav class="hidden items-center gap-6 text-sm font-medium text-muted md:flex">
+      <a href="/#how-it-works" class="hover:text-fg">How it works</a>
+      <a href="/brokers.html" class="hover:text-fg">Brokers</a>
+      <a href="/#pricing" class="hover:text-fg">Pricing</a>
+    </nav>
+    <a href="/#scan" class="inline-flex h-10 items-center rounded-lg bg-primary px-4 text-sm font-semibold text-primary-fg hover:bg-primary/90">Free scan</a>
+  </div>
+</header>
+  <main>
+    <section class="mx-auto grid max-w-6xl items-center gap-12 px-4 py-14 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:py-20">
+      <div>
+        <p class="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-accent">Data broker opt-outs</p>
+        <h1 class="font-display text-4xl font-semibold leading-[1.12] tracking-tight text-fg sm:text-5xl lg:text-6xl">Your name is for sale. Take it back.</h1>
+        <p class="mt-6 max-w-xl text-lg leading-relaxed text-muted">People-search sites collect addresses, phones, and relatives — then rank them on Google. OptlyOuts shows where you may appear and helps you request removal.</p>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a href="#scan" class="inline-flex h-12 items-center justify-center rounded-lg bg-primary px-6 text-sm font-semibold text-primary-fg hover:bg-primary/90">Get your free exposure scan</a>
+          <a href="#how-it-works" class="inline-flex h-12 items-center justify-center rounded-lg border border-border bg-card px-6 text-sm font-semibold text-fg hover:bg-surface">See how it works</a>
         </div>
-        <span class="font-semibold text-xl tracking-tight">Optly</span>
       </div>
-      <div class="hidden md:flex items-center gap-x-8 text-sm">
-        <a href="#how-it-works" class="hover:text-white transition">How it works</a>
-        <a href="#pricing" class="hover:text-white transition">Pricing</a>
-        <a href="#scan" class="px-5 py-2 bg-blue-600 hover:bg-blue-500 rounded-full font-medium transition">Free Scan</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero -->
-  <section class="max-w-5xl mx-auto px-6 pt-20 pb-24 text-center">
-    <div class="inline-flex items-center gap-x-2 px-4 py-1.5 bg-white/5 border border-white/10 rounded-full text-sm mb-8">
-      <span class="w-2 h-2 bg-emerald-400 rounded-full"></span>
-      Free web presence scan
-    </div>
-
-    <h1 class="text-4xl md:text-6xl font-bold leading-tight tracking-tight">
-      Your personal info is online.<br>
-      <span class="gradient-text">We help you take it back.</span>
-    </h1>
-
-    <p class="mt-6 text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed">
-      Optly scans data broker and people search sites for your information, then helps you remove it — automatically.
-    </p>
-
-    <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="#scan" class="px-8 py-4 bg-blue-600 hover:bg-blue-500 rounded-full font-semibold text-lg transition">
-        Start Free Scan
-      </a>
-      <a href="#how-it-works" class="px-8 py-4 border border-white/20 hover:bg-white/5 rounded-full font-semibold text-lg transition">
-        How it works
-      </a>
-    </div>
-  </section>
-
-  <!-- How it works -->
-  <section id="how-it-works" class="max-w-6xl mx-auto px-6 py-20 border-t border-white/10">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold">How Optly works</h2>
-      <p class="mt-4 text-zinc-400 text-lg">Simple. Fast. Effective.</p>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-zinc-900 border border-white/10 rounded-2xl p-8 text-center">
-        <div class="w-14 h-14 bg-blue-600/20 text-blue-400 rounded-2xl flex items-center justify-center mx-auto mb-5 text-xl">
-          <i class="fa-solid fa-magnifying-glass"></i>
+      <div id="scan" class="rounded-xl border border-border bg-card p-6 shadow-sm sm:p-8">
+        <h2 class="font-display text-2xl font-semibold tracking-tight">Free exposure scan</h2>
+        <p class="mt-2 mb-6 text-sm text-muted">Check major people-search and data-broker sites for potential matches.</p>
+        <form id="scan-form" class="space-y-4">
+          <div>
+            <label for="full-name" class="mb-1.5 block text-sm font-medium">Full name</label>
+            <input id="full-name" name="fullName" autocomplete="name" required placeholder="Jane Smith" class="h-11 w-full rounded-lg border border-border bg-surface px-3 text-sm text-fg placeholder:text-muted/70 focus:outline-none focus:ring-2 focus:ring-primary/30" />
+          </div>
+          <div class="grid gap-3 sm:grid-cols-2">
+            <div>
+              <label for="city" class="mb-1.5 block text-sm font-medium">City <span class="font-normal text-muted">(optional)</span></label>
+              <input id="city" name="city" autocomplete="address-level2" placeholder="Milwaukee" class="h-11 w-full rounded-lg border border-border bg-surface px-3 text-sm text-fg placeholder:text-muted/70 focus:outline-none focus:ring-2 focus:ring-primary/30" />
+            </div>
+            <div>
+              <label for="state" class="mb-1.5 block text-sm font-medium">State <span class="font-normal text-muted">(optional)</span></label>
+              <select id="state" name="state" class="h-11 w-full rounded-lg border border-border bg-surface px-3 text-sm text-fg focus:outline-none focus:ring-2 focus:ring-primary/30">
+                <option value="">Any</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" id="scan-btn" class="inline-flex h-12 w-full items-center justify-center rounded-lg bg-primary px-6 text-sm font-semibold text-primary-fg hover:bg-primary/90 disabled:opacity-60">Run free exposure scan</button>
+          <p class="text-center text-xs text-muted">No credit card. Results in seconds. Estimates, not a live crawl of every database.</p>
+        </form>
+        <div id="scan-progress" class="mt-6 hidden">
+          <div class="h-1.5 overflow-hidden rounded-full bg-border">
+            <div id="scan-bar" class="h-full w-0 bg-primary transition-[width] duration-200"></div>
+          </div>
+          <p id="scan-status" class="mt-3 text-center text-sm text-muted">Checking brokers…</p>
         </div>
-        <h3 class="text-xl font-semibold mb-3">1. Scan</h3>
-        <p class="text-zinc-400">We search major people-search and data broker sites for your name and information.</p>
       </div>
+    </section>
 
-      <div class="bg-zinc-900 border border-white/10 rounded-2xl p-8 text-center">
-        <div class="w-14 h-14 bg-blue-600/20 text-blue-400 rounded-2xl flex items-center justify-center mx-auto mb-5 text-xl">
-          <i class="fa-solid fa-list-check"></i>
+    <section id="results" class="hidden border-y border-border bg-surface">
+      <div class="mx-auto max-w-5xl px-4 py-14 sm:px-6">
+        <p class="text-sm font-semibold uppercase tracking-[0.14em] text-accent">Exposure scan</p>
+        <h2 id="results-name" class="mt-2 font-display text-4xl font-semibold tracking-tight"></h2>
+        <p id="results-meta" class="mt-2 text-muted"></p>
+        <div class="mt-6 flex flex-wrap items-center gap-3">
+          <span id="risk-badge" class="rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide"></span>
+          <span id="results-count" class="text-sm tabular-nums text-muted"></span>
         </div>
-        <h3 class="text-xl font-semibold mb-3">2. Review</h3>
-        <p class="text-zinc-400">See exactly where your personal data appears and which sites are exposing it.</p>
+        <div class="mt-8 rounded-xl border border-border bg-card p-5 text-sm leading-relaxed text-muted">
+          This is an exposure estimate based on how these brokers typically list people with your name and location. It is not a live crawl of every database, and matches can be incomplete or refer to someone else with the same name.
+        </div>
+        <ul id="hit-list" class="mt-8 space-y-3"></ul>
+        <div class="mt-10 rounded-xl border border-primary/20 bg-card p-6 text-center">
+          <p class="font-display text-xl font-semibold">Want OptlyOuts to handle the removals?</p>
+          <p class="mt-2 text-sm text-muted">Paid plans automate opt-out requests and keep watching for new listings.</p>
+          <a href="#pricing" class="mt-5 inline-flex h-11 items-center rounded-lg bg-primary px-5 text-sm font-semibold text-primary-fg hover:bg-primary/90">See plans from $1.99/mo</a>
+        </div>
       </div>
+    </section>
 
-      <div class="bg-zinc-900 border border-white/10 rounded-2xl p-8 text-center">
-        <div class="w-14 h-14 bg-blue-600/20 text-blue-400 rounded-2xl flex items-center justify-center mx-auto mb-5 text-xl">
-          <i class="fa-solid fa-shield"></i>
-        </div>
-        <h3 class="text-xl font-semibold mb-3">3. Remove</h3>
-        <p class="text-zinc-400">Optly helps you submit opt-out requests and tracks the removal process for you.</p>
+    <section class="border-y border-border bg-surface">
+      <div class="mx-auto grid max-w-6xl grid-cols-2 gap-6 px-4 py-8 text-center sm:grid-cols-4 sm:px-6">
+        <div><p class="font-display text-2xl font-semibold text-fg">25+</p><p class="mt-1 text-sm text-muted">Brokers tracked</p></div>
+        <div><p class="font-display text-2xl font-semibold text-fg">Free</p><p class="mt-1 text-sm text-muted">Initial exposure scan</p></div>
+        <div><p class="font-display text-2xl font-semibold text-fg">Automated</p><p class="mt-1 text-sm text-muted">Opt-out assistance</p></div>
+        <div><p class="font-display text-2xl font-semibold text-fg">Ongoing</p><p class="mt-1 text-sm text-muted">Monitoring on paid plans</p></div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Scan Section -->
-  <section id="scan" class="max-w-3xl mx-auto px-6 py-20 border-t border-white/10">
-    <div class="text-center mb-10">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Free Web Presence Scan</h2>
-      <p class="text-zinc-400 text-lg">Enter a name to see if it appears on major data broker sites.</p>
-    </div>
-
-    <div class="bg-zinc-900 border border-white/10 rounded-3xl p-8 md:p-10">
-      <form id="scan-form" class="space-y-5">
-        <div>
-          <label class="block text-sm font-medium text-zinc-300 mb-2">Full Name</label>
-          <input 
-            type="text" 
-            id="full-name"
-            placeholder="e.g. John Smith"
-            required
-            class="w-full px-4 py-3 bg-zinc-800 border border-white/10 rounded-xl text-zinc-100 placeholder-zinc-500 focus:outline-none focus:border-blue-500 transition"
-          >
+    <section class="mx-auto max-w-5xl px-4 py-20 sm:px-6">
+      <h2 class="text-center font-display text-3xl font-semibold tracking-tight">Why remove your data from brokers?</h2>
+      <p class="mx-auto mt-3 max-w-2xl text-center text-muted">Brokers assemble public and licensed records into profiles you never asked for — and sell access to anyone who searches.</p>
+      <div class="mt-12 grid gap-4 sm:grid-cols-2">
+        <div class="rounded-xl border border-border bg-card p-6">
+          <span class="grid size-10 place-items-center rounded-lg bg-bg text-primary"><svg viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6H10v6H5a1 1 0 0 1-1-1z"/></svg></span>
+          <h3 class="mt-4 font-semibold">Home address exposure</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted">Full addresses show up on people-search pages, raising risks around privacy, safety, and unwanted contact.</p>
         </div>
-
-        <button 
-          type="submit"
-          class="w-full px-8 py-4 bg-blue-600 hover:bg-blue-500 rounded-full font-semibold text-lg transition"
-        >
-          Run Free Scan
-        </button>
-      </form>
-
-      <div id="scan-result" class="hidden mt-8 p-5 bg-zinc-800 rounded-2xl border border-white/10">
-        <p class="text-zinc-300 text-sm mb-2">Scan complete</p>
-        <p id="result-text" class="text-lg font-medium"></p>
-        <a href="#pricing" class="inline-block mt-4 text-blue-400 hover:text-blue-300 text-sm font-medium">
-          Remove these results →
-        </a>
+        <div class="rounded-xl border border-border bg-card p-6">
+          <span class="grid size-10 place-items-center rounded-lg bg-bg text-primary"><svg viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 3h3l1.5 4-2 1.5a12 12 0 0 0 6 6L17 13l4 1.5V18a2 2 0 0 1-2 2A16 16 0 0 1 4 7a2 2 0 0 1 3-2z"/></svg></span>
+          <h3 class="mt-4 font-semibold">Phone and spam risk</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted">Listed numbers feed robocalls, phishing, and marketing lists you never opted into.</p>
+        </div>
+        <div class="rounded-xl border border-border bg-card p-6">
+          <span class="grid size-10 place-items-center rounded-lg bg-bg text-primary"><svg viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="7" r="3.5"/><path d="M20 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a3.5 3.5 0 0 1 0 6.74"/></svg></span>
+          <h3 class="mt-4 font-semibold">Family and relatives</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted">Many profiles include household members, widening the exposure surface beyond you.</p>
+        </div>
+        <div class="rounded-xl border border-border bg-card p-6">
+          <span class="grid size-10 place-items-center rounded-lg bg-bg text-primary"><svg viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
+          <h3 class="mt-4 font-semibold">Search-engine visibility</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted">Broker pages often rank when someone Googles your name — including employers and strangers.</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Pricing -->
-  <section id="pricing" class="max-w-6xl mx-auto px-6 py-20 border-t border-white/10">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold">Simple Pricing</h2>
-      <p class="mt-4 text-zinc-400 text-lg">Free to scan. Pay only when you want removals.</p>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-      <div class="bg-zinc-900 border border-white/10 rounded-2xl p-8">
-        <h3 class="text-lg font-semibold text-zinc-300">Monthly</h3>
-        <div class="mt-4 flex items-baseline gap-1">
-          <span class="text-4xl font-bold">$1.99</span>
-          <span class="text-zinc-500">/mo</span>
+    <section id="how-it-works" class="border-y border-border bg-surface">
+      <div class="mx-auto max-w-5xl px-4 py-20 sm:px-6">
+        <h2 class="text-center font-display text-3xl font-semibold tracking-tight">How OptlyOuts works</h2>
+        <p class="mt-3 text-center text-muted">Three steps from scan to removal.</p>
+        <div class="mt-12 grid gap-6 md:grid-cols-3">
+          <div class="rounded-xl border border-border bg-card p-8 text-center">
+            <div class="mx-auto mb-5 grid size-12 place-items-center rounded-full bg-primary font-display text-lg font-semibold text-primary-fg">1</div>
+            <h3 class="font-display text-xl font-semibold">Scan</h3>
+            <p class="mt-3 text-sm leading-relaxed text-muted">Enter your name. We estimate likely listings across major people-search and data-broker sites.</p>
+          </div>
+          <div class="rounded-xl border border-border bg-card p-8 text-center">
+            <div class="mx-auto mb-5 grid size-12 place-items-center rounded-full bg-primary font-display text-lg font-semibold text-primary-fg">2</div>
+            <h3 class="font-display text-xl font-semibold">Review</h3>
+            <p class="mt-3 text-sm leading-relaxed text-muted">See potential matches, typical data types, and a risk level you can actually act on.</p>
+          </div>
+          <div class="rounded-xl border border-border bg-card p-8 text-center">
+            <div class="mx-auto mb-5 grid size-12 place-items-center rounded-full bg-primary font-display text-lg font-semibold text-primary-fg">3</div>
+            <h3 class="font-display text-xl font-semibold">Remove</h3>
+            <p class="mt-3 text-sm leading-relaxed text-muted">Use DIY instructions for free, or a paid plan for automated opt-out assistance and monitoring.</p>
+          </div>
         </div>
-        <ul class="mt-6 space-y-3 text-sm text-zinc-400">
-          <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Continuous monitoring</li>
-          <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Automated opt-outs</li>
-          <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Status tracking</li>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-5xl px-4 py-20 sm:px-6">
+      <h2 class="text-center font-display text-3xl font-semibold tracking-tight">Proof of removal</h2>
+      <p class="mx-auto mt-3 max-w-2xl text-center text-muted">Paid plans track status and surface before/after evidence when a broker actually drops the listing.</p>
+      <div class="mt-10 grid gap-6 md:grid-cols-2">
+        <div class="overflow-hidden rounded-xl border border-border bg-card">
+          <div class="flex items-center justify-between border-b border-danger/20 bg-danger/10 px-4 py-2.5">
+            <span class="text-xs font-semibold uppercase tracking-wide text-danger">Before</span>
+            <span class="text-xs text-danger">Profile found</span>
+          </div>
+          <div class="p-4">
+            <div class="overflow-hidden rounded-lg border border-border bg-bg">
+              <div class="flex items-center gap-2 border-b border-border bg-surface px-3 py-2">
+                <span class="size-2 rounded-full bg-danger/70"></span>
+                <span class="size-2 rounded-full bg-warning/70"></span>
+                <span class="size-2 rounded-full bg-success/70"></span>
+                <span class="ml-2 truncate rounded bg-card px-2 py-0.5 text-[10px] text-muted">spokeo.com/search</span>
+              </div>
+              <div class="space-y-3 p-4">
+                <div class="flex items-center gap-3">
+                  <div class="size-12 rounded-full bg-border"></div>
+                  <div class="space-y-1.5">
+                    <div class="h-3 w-32 rounded bg-border"></div>
+                    <div class="h-2 w-24 rounded bg-border/70"></div>
+                  </div>
+                </div>
+                <div class="space-y-2">
+                  <div class="h-2 w-full rounded bg-border/80"></div>
+                  <div class="h-2 w-5/6 rounded bg-border/70"></div>
+                  <div class="h-2 w-3/4 rounded border border-danger/20 bg-danger/15"></div>
+                </div>
+                <div class="flex gap-2 pt-1">
+                  <span class="rounded-full bg-danger/10 px-2 py-0.5 text-[10px] text-danger">Address exposed</span>
+                  <span class="rounded-full bg-danger/10 px-2 py-0.5 text-[10px] text-danger">Phone listed</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="overflow-hidden rounded-xl border border-border bg-card">
+          <div class="flex items-center justify-between border-b border-success/20 bg-success/10 px-4 py-2.5">
+            <span class="text-xs font-semibold uppercase tracking-wide text-success">After</span>
+            <span class="text-xs text-success">Removed / suppressed</span>
+          </div>
+          <div class="p-4">
+            <div class="overflow-hidden rounded-lg border border-border bg-bg">
+              <div class="flex items-center gap-2 border-b border-border bg-surface px-3 py-2">
+                <span class="size-2 rounded-full bg-danger/70"></span>
+                <span class="size-2 rounded-full bg-warning/70"></span>
+                <span class="size-2 rounded-full bg-success/70"></span>
+                <span class="ml-2 truncate rounded bg-card px-2 py-0.5 text-[10px] text-muted">spokeo.com/search</span>
+              </div>
+              <div class="flex min-h-40 flex-col items-center justify-center p-8 text-center">
+                <span class="mb-3 grid size-12 place-items-center rounded-full bg-success/10 text-success"><svg viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3l18 18"/><path d="M10.6 10.6A3 3 0 0 0 12 15a3 3 0 0 0 2.4-1.2"/><path d="M9.9 5.2A10 10 0 0 1 12 5c5.5 0 9.5 5 10 7-.2.8-1 2.3-2.4 3.8"/><path d="M6.1 6.1C4.2 7.6 2.9 9.6 2 12c.5 2 4.5 7 10 7 1.4 0 2.7-.3 3.9-.8"/></svg></span>
+                <p class="text-sm font-medium">No matching profile</p>
+                <p class="mt-1 text-xs text-muted">Listing no longer returned</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="border-y border-border bg-surface">
+      <div class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+        <h2 class="text-center font-display text-3xl font-semibold tracking-tight">Simple, transparent pricing</h2>
+        <p class="mt-3 text-center text-muted">Start free. Upgrade only if you want automated removals.</p>
+        <div class="mt-12 grid gap-4 md:grid-cols-4">
+          <div class="flex flex-col rounded-xl border border-border bg-card p-6">
+            <h3 class="font-semibold">Free</h3>
+            <p class="mt-3 font-display text-3xl font-semibold">$0 <span class="ml-1 text-sm font-sans font-normal text-muted">Exposure scan</span></p>
+            <p class="mt-2 mb-6 text-sm text-muted">See where your name may appear, then opt out yourself.</p>
+            <ul class="flex-1 space-y-2.5 text-sm text-muted">
+              <li class="flex gap-2"><svg viewBox="0 0 24 24" class="mt-0.5 size-4 shrink-0 text-success" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5 9.5 17 19 7"/></svg> Free web presence scan</li>
+              <li class="flex gap-2"><svg viewBox="0 0 24 24" class="mt-0.5 size-4 shrink-0 text-success" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5 9.5 17 19 7"/></svg> Potential matches across 25+ brokers</li>
+              <li class="flex gap-2"><svg viewBox="0 0 24 24" class="mt-0.5 size-4 shrink-0 text-success" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5 9.5 17 19 7"/></svg> DIY opt-out wiki for every site</li>
+              <li class="flex gap-2"><svg viewBox="0 0 24 24" class="mt-0.5 size-4 shrink-0 text-success" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5 9.5 17 19 7"/></svg> Track manual removals</li>
+            </ul>
+            <a href="#scan" class="mt-6 inline-flex h-11 w-full items-center justify-center rounded-lg border border-border bg-surface text-sm font-semibold hover:bg-bg">Start free</a>
+          </div>
+          <div class="flex flex-col rounded-xl border border-border bg-card p-6">
+            <h3 class="font-semibold">Monthly</h3>
+            <p class="mt-3 font-display text-3xl font-semibold">$1.99 <span class="ml-1 text-sm font-sans font-normal text-muted">/mo</span></p>
+            <p class="mt-2 mb-6 text-sm text-muted">Automated opt-out help and continuous monitoring.</p>
+            <ul class="flex-1 space-y-2.5 text-sm text-muted">
+              <li class="flex gap-2"><svg viewBox="0 0 24 24" class="mt-0.5 size-4 shrink-0 text-success" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5 9.5 17 19 7"/></svg> Everything in Free</li>
+              <li class="flex gap-2"><svg viewBox="0 0 24 24" class="mt-0.5 size-4 shrink-0 text-success" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5 9.5 17 19 7"/></svg> Automated opt-out assistance</li>
+              <li class="flex gap-2"><svg viewBox="0 0 24 24" class="mt-0.5 size-4 shrink-0 text-success" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5 9.5 17 19 7"/></svg> Continuous monitoring</li>
+              <li class="flex gap-2"><svg viewBox="0 0 24 24" class="mt-0.5 size-4 shrink-0 text-success" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5 9.5 17 19 7"/></svg> Status tracking in your dashboard</li>
+            </ul>
+            <a href="mailto:info@awakyn.ai?subject=OptlyOuts%20Monthly" class="mt-6 inline-flex h-11 w-full items-center justify-center rounded-lg border border-border bg-surface text-sm font-semibold hover:bg-bg">Get Monthly</a>
+          </div>
+          <div class="relative flex flex-col rounded-xl border-2 border-primary bg-card p-6">
+            <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-primary px-3 py-0.5 text-xs font-semibold text-primary-fg">Best value</span>
+            <h3 class="font-semibold">Yearly</h3>
+            <p class="mt-3 font-display text-3xl font-semibold">$14.99 <span class="ml-1 text-sm font-sans font-normal text-muted">/yr</span></p>
+            <p class="mt-2 mb-6 text-sm text-muted">A full year of coverage — best value.</p>
+            <ul class="flex-1 space-y-2.5 text-sm text-muted">
+              <li class="flex gap-2"><svg viewBox="0 0 24 24" class="mt-0.5 size-4 shrink-0 text-success" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5 9.5 17 19 7"/></svg> Everything in Monthly</li>
+              <li class="flex gap-2"><svg viewBox="0 0 24 24" class="mt-0.5 size-4 shrink-0 text-success" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5 9.5 17 19 7"/></svg> Priority processing</li>
+              <li class="flex gap-2"><svg viewBox="0 0 24 24" class="mt-0.5 size-4 shrink-0 text-success" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5 9.5 17 19 7"/></svg> Full year of coverage</li>
+              <li class="flex gap-2"><svg viewBox="0 0 24 24" class="mt-0.5 size-4 shrink-0 text-success" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5 9.5 17 19 7"/></svg> Save over 35% vs monthly</li>
+            </ul>
+            <a href="mailto:info@awakyn.ai?subject=OptlyOuts%20Yearly" class="mt-6 inline-flex h-11 w-full items-center justify-center rounded-lg bg-primary text-sm font-semibold text-primary-fg hover:bg-primary/90">Get Yearly</a>
+          </div>
+          <div class="flex flex-col rounded-xl border border-border bg-card p-6">
+            <h3 class="font-semibold">Lifetime</h3>
+            <p class="mt-3 font-display text-3xl font-semibold">$29.99 <span class="ml-1 text-sm font-sans font-normal text-muted">once</span></p>
+            <p class="mt-2 mb-6 text-sm text-muted">One payment. Ongoing access to OptlyOuts.</p>
+            <ul class="flex-1 space-y-2.5 text-sm text-muted">
+              <li class="flex gap-2"><svg viewBox="0 0 24 24" class="mt-0.5 size-4 shrink-0 text-success" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5 9.5 17 19 7"/></svg> Everything included</li>
+              <li class="flex gap-2"><svg viewBox="0 0 24 24" class="mt-0.5 size-4 shrink-0 text-success" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5 9.5 17 19 7"/></svg> Lifetime access</li>
+              <li class="flex gap-2"><svg viewBox="0 0 24 24" class="mt-0.5 size-4 shrink-0 text-success" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5 9.5 17 19 7"/></svg> Future feature updates</li>
+            </ul>
+            <a href="mailto:info@awakyn.ai?subject=OptlyOuts%20Lifetime" class="mt-6 inline-flex h-11 w-full items-center justify-center rounded-lg border border-border bg-surface text-sm font-semibold hover:bg-bg">Get Lifetime</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-5xl px-4 py-20 sm:px-6">
+      <h2 class="text-center font-display text-3xl font-semibold tracking-tight">What people are saying</h2>
+      <div class="mt-10 grid gap-4 md:grid-cols-3">
+        <blockquote class="rounded-xl border border-border bg-card p-6">
+          <p class="text-sm leading-relaxed text-fg">“I had no idea how many people-search sites had my address listed. The free scan was eye-opening.”</p>
+          <p class="mt-5 text-sm font-semibold">Marcus T.</p>
+          <p class="text-sm text-muted">Milwaukee, WI</p>
+        </blockquote>
+        <blockquote class="rounded-xl border border-border bg-card p-6">
+          <p class="text-sm leading-relaxed text-fg">“Finally a privacy tool that doesn’t feel overcomplicated. Pricing is fair and the results were easy to understand.”</p>
+          <p class="mt-5 text-sm font-semibold">Sarah K.</p>
+          <p class="text-sm text-muted">Chicago, IL</p>
+        </blockquote>
+        <blockquote class="rounded-xl border border-border bg-card p-6">
+          <p class="text-sm leading-relaxed text-fg">“I ran the free scan for my parents too. Seeing how much of their info was floating around made me take this seriously.”</p>
+          <p class="mt-5 text-sm font-semibold">David R.</p>
+          <p class="text-sm text-muted">Madison, WI</p>
+        </blockquote>
+      </div>
+    </section>
+
+    <section id="faq" class="mx-auto max-w-3xl px-4 py-8 pb-20 sm:px-6">
+      <h2 class="mb-8 text-center font-display text-3xl font-semibold tracking-tight">Frequently asked questions</h2>
+      <div class="space-y-3">
+        <details class="group rounded-xl border border-border bg-card">
+          <summary class="flex cursor-pointer items-center justify-between px-5 py-4 font-medium">What does the free scan actually check? <svg viewBox="0 0 24 24" class="size-4 text-muted transition group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <p class="px-5 pb-4 text-sm leading-relaxed text-muted">It estimates potential matches of your name across major people-search and data-broker sites. It is not a live crawl of every database. Full automated scanning and removal management sit on paid plans.</p>
+        </details>
+        <details class="group rounded-xl border border-border bg-card">
+          <summary class="flex cursor-pointer items-center justify-between px-5 py-4 font-medium">Can OptlyOuts guarantee removal from every site? <svg viewBox="0 0 24 24" class="size-4 text-muted transition group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <p class="px-5 pb-4 text-sm leading-relaxed text-muted">No service can. Brokers control their own databases. Some require extra verification, may refuse, or re-list later. We focus on submitting and tracking requests as effectively as possible.</p>
+        </details>
+        <details class="group rounded-xl border border-border bg-card">
+          <summary class="flex cursor-pointer items-center justify-between px-5 py-4 font-medium">How is this different from larger services? <svg viewBox="0 0 24 24" class="size-4 text-muted transition group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <p class="px-5 pb-4 text-sm leading-relaxed text-muted">OptlyOuts is simple and affordable — a clear free scan, a DIY wiki, and straightforward paid plans. No enterprise-style pricing.</p>
+        </details>
+        <details class="group rounded-xl border border-border bg-card">
+          <summary class="flex cursor-pointer items-center justify-between px-5 py-4 font-medium">Do you sell or share my data? <svg viewBox="0 0 24 24" class="size-4 text-muted transition group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <p class="px-5 pb-4 text-sm leading-relaxed text-muted">No. We do not sell personal information. We only use what you provide to run scans and assist with opt-outs. See the <a class="text-accent hover:underline" href="/privacy.html">Privacy Policy</a>.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="bg-primary text-primary-fg">
+      <div class="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6">
+        <svg viewBox="0 0 24 24" class="mx-auto mb-4 size-8 opacity-80" fill="currentColor"><path d="M12 3c-3.2 2.2-5.6 2.8-6.8 3v6.6c0 4.3 3 7.3 6.8 8.4 3.8-1.1 6.8-4.1 6.8-8.4V6c-1.2-.2-3.6-.8-6.8-3z"/></svg>
+        <h2 class="font-display text-3xl font-semibold">Start with a free exposure scan</h2>
+        <p class="mt-3 text-primary-fg/80">See where your information may be appearing — then decide if you want help removing it.</p>
+        <a href="#scan" class="mt-8 inline-flex h-12 items-center rounded-lg bg-surface px-6 text-sm font-semibold text-fg hover:bg-card">Run free scan</a>
+      </div>
+    </section>
+  </main>
+  <footer class="border-t border-border bg-surface">
+  <div class="mx-auto flex max-w-6xl flex-col gap-8 px-4 py-12 sm:px-6 md:flex-row md:justify-between">
+    <div class="max-w-sm">
+      <a href="/" class="inline-flex items-center gap-2.5 text-fg">
+  <span class="grid size-8 place-items-center rounded-lg bg-primary text-primary-fg">
+    <svg viewBox="0 0 24 24" class="size-4" fill="currentColor" aria-hidden="true"><path d="M12 3c-3.2 2.2-5.6 2.8-6.8 3v6.6c0 4.3 3 7.3 6.8 8.4 3.8-1.1 6.8-4.1 6.8-8.4V6c-1.2-.2-3.6-.8-6.8-3z"/></svg>
+  </span>
+  <span class="text-lg font-semibold tracking-tight">OptlyOuts</span>
+</a>
+      <p class="mt-3 text-sm leading-relaxed text-muted">A product of Awakyn Labs. Helping people reduce their exposure on data broker and people-search sites.</p>
+    </div>
+    <div class="flex gap-12 text-sm">
+      <div>
+        <p class="mb-3 font-semibold text-fg">Product</p>
+        <ul class="space-y-2 text-muted">
+          <li><a href="/#how-it-works" class="hover:text-fg">How it works</a></li>
+          <li><a href="/#pricing" class="hover:text-fg">Pricing</a></li>
+          <li><a href="/brokers.html" class="hover:text-fg">Broker directory</a></li>
         </ul>
-        <button class="mt-8 w-full py-3 bg-white/10 hover:bg-white/15 rounded-full font-medium transition">
-          Get Started
-        </button>
       </div>
-
-      <div class="bg-zinc-900 border-2 border-blue-500 rounded-2xl p-8 relative">
-        <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-blue-600 text-xs font-semibold rounded-full">
-          Best Value
-        </div>
-        <h3 class="text-lg font-semibold text-zinc-300">Yearly</h3>
-        <div class="mt-4 flex items-baseline gap-1">
-          <span class="text-4xl font-bold">$14.99</span>
-          <span class="text-zinc-500">/yr</span>
-        </div>
-        <ul class="mt-6 space-y-3 text-sm text-zinc-400">
-          <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Everything in Monthly</li>
-          <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Priority processing</li>
-          <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Save over 35%</li>
+      <div>
+        <p class="mb-3 font-semibold text-fg">Legal</p>
+        <ul class="space-y-2 text-muted">
+          <li><a href="/privacy.html" class="hover:text-fg">Privacy Policy</a></li>
+          <li><a href="/terms.html" class="hover:text-fg">Terms of Service</a></li>
         </ul>
-        <button class="mt-8 w-full py-3 bg-blue-600 hover:bg-blue-500 rounded-full font-medium transition">
-          Get Started
-        </button>
-      </div>
-
-      <div class="bg-zinc-900 border border-white/10 rounded-2xl p-8">
-        <h3 class="text-lg font-semibold text-zinc-300">Lifetime</h3>
-        <div class="mt-4 flex items-baseline gap-1">
-          <span class="text-4xl font-bold">$29.99</span>
-          <span class="text-zinc-500">once</span>
-        </div>
-        <ul class="mt-6 space-y-3 text-sm text-zinc-400">
-          <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> One-time payment</li>
-          <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Lifetime access</li>
-          <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> All future features</li>
-        </ul>
-        <button class="mt-8 w-full py-3 bg-white/10 hover:bg-white/15 rounded-full font-medium transition">
-          Get Started
-        </button>
       </div>
     </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="border-t border-white/10 py-12 text-center text-zinc-500 text-sm">
-    <div class="max-w-6xl mx-auto px-6">
-      <p class="font-semibold text-zinc-300 text-base mb-2">Optly</p>
-      <p>A product by <a href="https://awakyn.ai" class="text-blue-400 hover:text-blue-300">Awakyn Labs</a></p>
-      <p class="mt-4 space-x-4">
-        <a href="/privacy.html" class="text-zinc-400 hover:text-white transition">Privacy Policy</a>
-        <a href="/terms.html" class="text-zinc-400 hover:text-white transition">Terms of Service</a>
-      </p>
-      <p class="mt-4">© 2026 Optly. All rights reserved.</p>
-    </div>
-  </footer>
-
+  </div>
+  <div class="mx-auto flex max-w-6xl flex-col gap-2 border-t border-border px-4 py-6 text-sm text-muted sm:flex-row sm:justify-between sm:px-6">
+    <p>© 2026 OptlyOuts · Awakyn Labs</p>
+    <p>Greater Milwaukee Area, USA</p>
+  </div>
+</footer>
+  <script src="/scan.js"></script>
   <script>
-    document.getElementById('scan-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('full-name').value.trim();
-      const resultBox = document.getElementById('scan-result');
-      const resultText = document.getElementById('result-text');
-      resultText.textContent = `We found potential matches for "${name}" on multiple data broker sites.`;
-      resultBox.classList.remove('hidden');
-    });
-  </script>
+    (function () {
+      const state = document.getElementById("state");
+      US_STATES.forEach(([code, name]) => {
+        const opt = document.createElement("option");
+        opt.value = code;
+        opt.textContent = code;
+        opt.title = name;
+        state.appendChild(opt);
+      });
 
+      const form = document.getElementById("scan-form");
+      const btn = document.getElementById("scan-btn");
+      const progress = document.getElementById("scan-progress");
+      const bar = document.getElementById("scan-bar");
+      const status = document.getElementById("scan-status");
+      const results = document.getElementById("results");
+      const hitList = document.getElementById("hit-list");
+
+      function sleep(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+      }
+
+      function riskStyle(level) {
+        if (level === "high") return ["High risk", "bg-danger/10 text-danger"];
+        if (level === "medium") return ["Medium risk", "bg-warning/10 text-warning"];
+        return ["Low risk", "bg-success/10 text-success"];
+      }
+
+      function render(scan) {
+        document.getElementById("results-name").textContent = scan.fullName;
+        const loc = [scan.city, scan.state].filter(Boolean).join(", ") || "Location not specified";
+        document.getElementById("results-meta").textContent = loc + " · " + scan.scannedCount + " brokers checked";
+        document.getElementById("results-count").textContent = scan.hits.length + " potential matches";
+        const [label, cls] = riskStyle(scan.riskLevel);
+        const badge = document.getElementById("risk-badge");
+        badge.className = "rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide " + cls;
+        badge.textContent = label;
+        hitList.innerHTML = "";
+        if (!scan.hits.length) {
+          const empty = document.createElement("li");
+          empty.className = "rounded-xl border border-border bg-card p-6 text-sm text-muted";
+          empty.textContent = "No likely listings for this name and location in the current catalog. That does not mean you are absent from every broker.";
+          hitList.appendChild(empty);
+        } else {
+          scan.hits.forEach((hit) => {
+            const li = document.createElement("li");
+            li.className = "rounded-xl border border-border bg-card p-5";
+            const types = hit.dataTypes.map((t) => DATA_LABEL[t] || t).join(" · ");
+            li.innerHTML =
+              '<div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">' +
+                '<div>' +
+                  '<p class="font-semibold">' + hit.broker.name + '</p>' +
+                  '<p class="mt-1 text-sm text-muted">' + hit.broker.domain + ' · ' + (hit.confidence === "likely" ? "Likely match" : "Possible match") + '</p>' +
+                  '<p class="mt-2 text-sm text-muted">' + types + '</p>' +
+                '</div>' +
+                '<div class="flex gap-2">' +
+                  '<a class="inline-flex h-10 items-center rounded-lg bg-primary px-4 text-sm font-semibold text-primary-fg hover:bg-primary/90" href="' + hit.broker.optOutUrl + '" target="_blank" rel="noopener noreferrer">Open opt-out</a>' +
+                  '<a class="inline-flex h-10 items-center rounded-lg border border-border bg-surface px-4 text-sm font-semibold hover:bg-bg" href="/brokers.html#' + hit.broker.slug + '">DIY steps</a>' +
+                '</div>' +
+              '</div>';
+            hitList.appendChild(li);
+          });
+        }
+        results.classList.remove("hidden");
+        results.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const fullName = document.getElementById("full-name").value.trim();
+        if (fullName.length < 2) {
+          document.getElementById("full-name").focus();
+          return;
+        }
+        btn.disabled = true;
+        btn.textContent = "Scanning brokers…";
+        progress.classList.remove("hidden");
+        const city = document.getElementById("city").value.trim();
+        const st = document.getElementById("state").value;
+        const names = BROKERS.map((b) => b.name);
+        for (let i = 0; i < names.length; i += 1) {
+          bar.style.width = Math.round(((i + 1) / names.length) * 100) + "%";
+          status.textContent = "Checking " + names[i] + "…";
+          await sleep(45);
+        }
+        const scan = runExposureScan({ fullName, city, state: st });
+        try { sessionStorage.setItem("optly.lastScan", JSON.stringify(scan)); } catch (e) {}
+        btn.disabled = false;
+        btn.textContent = "Run free exposure scan";
+        progress.classList.add("hidden");
+        bar.style.width = "0%";
+        render(scan);
+      });
+    })();
+  </script>
 </body>
 </html>

@@ -1,76 +1,61 @@
-# Optly Website
+# OptlyOuts Website
 
-Official marketing and landing page for **Optly** — a privacy-focused product that helps individuals discover and remove their personal information from data broker and people-search websites.
+Official marketing site for **OptlyOuts** — a privacy product from Awakyn Labs that helps people find and remove personal information from data-broker and people-search sites.
 
-**Live site:** [https://optly.awakyn.ai](https://optly.awakyn.ai)
-
----
-
-## What is Optly?
-
-Optly is designed to solve a growing privacy problem: personal information (names, addresses, phone numbers, relatives, etc.) is routinely collected and published by data brokers and people-search sites.
-
-Most people don’t know these sites exist until they search for their own name and find multiple results. Optly makes the process of finding and removing that information simpler.
-
-### Core Features
-
-- **Free Web Presence Scan**  
-  Users can enter a name and see whether it appears on major data broker / people-search sites.
-
-- **Automated Opt-Out Assistance**  
-  Paid plans help submit and track removal requests across supported sites.
-
-- **Ongoing Monitoring**  
-  Continuous checks so new listings can be detected and addressed.
-
-- **Simple Freemium Model**  
-  Free to scan. Paid plans unlock removal tools and monitoring.
+**Live site:** [https://optlyouts.awakyn.ai](https://optlyouts.awakyn.ai)
 
 ---
 
-## Product Positioning
+## What is OptlyOuts?
 
-| Item                    | Detail                                      |
-|-------------------------|---------------------------------------------|
-| Product Name            | Optly                                       |
-| Parent Company          | Awakyn Labs                                 |
-| Primary Domain          | optly.awakyn.ai                             |
-| Target Audience         | Individuals concerned about online privacy  |
-| Business Model          | Freemium (Free scan → Paid removal plans)   |
-| Platform                | Web + future iOS app                        |
+People-search sites collect names, addresses, phones, and relatives, then rank them in search results. OptlyOuts gives you a free exposure scan, a DIY opt-out wiki, and affordable paid plans for automated removals.
+
+### Features
+
+- **Free exposure scan** — name + optional city/state, hashed estimate across 26 brokers
+- **DIY broker wiki** — official opt-out links and steps for every tracked site
+- **Paid assistance** — automated opt-out help and monitoring
+- **No data selling** — we do not sell personal information
+
+---
+
+## Product
+
+| Item | Detail |
+|------|--------|
+| Product name | OptlyOuts |
+| Parent | Awakyn Labs |
+| Domain | optlyouts.awakyn.ai |
+| Audience | Individuals who want their people-search listings reduced |
+| Model | Freemium (free scan → paid removal plans) |
 
 ---
 
 ## Pricing
 
-| Plan       | Price     | Description                              |
-|------------|-----------|------------------------------------------|
-| Free       | $0        | Web presence scan                        |
-| Monthly    | $1.99/mo  | Monitoring + automated opt-outs          |
-| Yearly     | $14.99/yr | Best value (significant savings)         |
-| Lifetime   | $29.99    | One-time payment, lifetime access        |
+| Plan | Price | Notes |
+|------|-------|-------|
+| Free | $0 | Exposure scan + DIY wiki |
+| Monthly | $1.99/mo | Automated opt-outs + monitoring |
+| Yearly | $14.99/yr | Best value |
+| Lifetime | $29.99 | One-time |
 
 ---
 
-## Technology Stack
+## Stack
 
-### Frontend (this repository)
-- Static HTML + Tailwind CSS (via CDN)
-- Vanilla JavaScript for interactive elements
-- Font Awesome icons
-- Designed for fast loading and mobile responsiveness
+- Static HTML + Tailwind CSS (CDN) + vanilla JS (`scan.js`)
+- Cloudflare Pages hosting, custom domain `optlyouts.awakyn.ai`
+- Cream / navy brand (Fraunces + Figtree)
 
-### Backend (separate repository)
-- Cloudflare Workers
-- Cloudflare D1 (SQLite database)
-- Hono framework (planned)
-- Stripe for payments
-
-### Infrastructure
-- Cloudflare Pages (hosting)
-- Custom domain: `optly.awakyn.ai`
-- Cloudflare DNS
+The free scan is a **deterministic hash estimate**, not a live crawl of every broker database.
 
 ---
 
-## Repository Structure
+## Files
+
+- `index.html` — landing, scan, pricing, FAQ
+- `brokers.html` — broker directory + DIY steps
+- `privacy.html` / `terms.html` — legal
+- `scan.js` — broker catalog + exposure engine
+- `_headers` / `_redirects` — Cloudflare Pages config

@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://optly.awakyn.ai/</loc>
-    <lastmod>2026-08-12</lastmod>
+    <loc>https://optlyouts.awakyn.ai/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://optly.awakyn.ai/privacy.html</loc>
-    <lastmod>2026-08-12</lastmod>
+    <loc>https://optlyouts.awakyn.ai/brokers.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://optly.awakyn.ai/terms.html</loc>
-    <lastmod>2026-08-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <loc>https://optlyouts.awakyn.ai/privacy.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://optlyouts.awakyn.ai/terms.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
   </url>
 </urlset>
