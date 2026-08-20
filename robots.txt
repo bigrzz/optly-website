@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://optly.awakyn.ai/sitemap.xml
+Sitemap: https://optlyouts.awakyn.ai/sitemap.xml
