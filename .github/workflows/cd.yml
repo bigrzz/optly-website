@@ -1,10 +1,14 @@
 name: CD
 
-# Primary production CD is Cloudflare Pages Git integration:
-#   push to main → Pages build → https://optlyouts.awakyn.ai
-# This workflow is the explicit CI/CD example:
-#   1. Re-run CI on main (gate)
-#   2. Direct-upload with Wrangler if CLOUDFLARE_API_TOKEN is set
+# Cloudflare automation — Wrangler Direct Upload is the production ship path.
+# GitHub Actions → pack dist/ → Pages project optly-website → optlyouts.awakyn.ai
+# plus a 15-minute health Worker.
+#
+# Required repo secrets:
+#   CLOUDFLARE_API_TOKEN     Account.Cloudflare Pages Edit + Account.Workers Scripts Edit
+#   CLOUDFLARE_ACCOUNT_ID
+# Optional:
+#   CLOUDFLARE_ZONE_ID       purge cache for optlyouts.awakyn.ai after deploy
 
 on:
   push:
@@ -25,26 +29,73 @@ jobs:
     uses: ./.github/workflows/ci.yml
 
   deploy:
-    name: Cloudflare Pages
+    name: Cloudflare Pages + Worker
     needs: ci
     runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://optlyouts.awakyn.ai
     env:
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
       CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Pages Git integration (default CD)
-        run: |
-          echo "Cloudflare Pages is connected to this repo."
-          echo "Production URL: https://optlyouts.awakyn.ai"
-          echo "A push to main already triggers a Pages deployment."
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
 
-      - name: Optional Wrangler Direct Upload
-        if: ${{ env.CLOUDFLARE_API_TOKEN != '' }}
+      - name: Require Cloudflare secrets
+        run: |
+          missing=
+          [ -z "$CLOUDFLARE_API_TOKEN" ] && missing="$missing CLOUDFLARE_API_TOKEN"
+          [ -z "$CLOUDFLARE_ACCOUNT_ID" ] && missing="$missing CLOUDFLARE_ACCOUNT_ID"
+          if [ -n "$missing" ]; then
+            echo "::error::Cloudflare automation is not armed. Add GitHub Actions secrets:$missing"
+            echo "Token: https://dash.cloudflare.com/profile/api-tokens  (Edit Cloudflare Pages + Workers Scripts)"
+            echo "Account ID: right rail of any zone in the Cloudflare dashboard."
+            exit 1
+          fi
+
+      - name: Pack Pages assets
+        run: node scripts/cf-pack.mjs
+
+      - name: Ensure Pages project
+        continue-on-error: true
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy . --project-name=optly-website --branch=main --commit-dirty=true
+          command: pages project create optly-website --production-branch=main
+
+      - name: Deploy Pages
+        id: pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=optly-website --branch=main --commit-dirty=true
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Deploy health Worker
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy --config wrangler.health.toml
+
+      - name: Purge zone cache
+        if: ${{ env.CLOUDFLARE_ZONE_ID != '' }}
+        run: |
+          curl -sS -X POST "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/purge_cache" \
+            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+            -H "Content-Type: application/json" \
+            --data '{"purge_everything":true}'
+
+      - name: Production URL
+        run: |
+          echo "Live: https://optlyouts.awakyn.ai"
+          echo "Deployment: ${{ steps.pages.outputs.deployment-url }}"

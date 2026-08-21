@@ -6,6 +6,7 @@
 import { createContext, runInContext } from "node:vm";
 import { readFileSync, existsSync, statSync } from "node:fs";
 import { resolve } from "node:path";
+import { pack, PAGES_FILES } from "./cf-pack.mjs";
 
 const root = resolve(process.cwd());
 const fail = [];
@@ -33,6 +34,13 @@ const required = [
   "_redirects",
   "robots.txt",
   "sitemap.xml",
+  "wrangler.toml",
+  "wrangler.health.toml",
+  "workers/health.js",
+  "scripts/cf-pack.mjs",
+  ".github/workflows/ci.yml",
+  ".github/workflows/cd.yml",
+  ".github/workflows/preview.yml",
 ];
 
 for (const file of required) {
@@ -106,6 +114,41 @@ else ok("scan varies by name");
 const slugs = new Set(brokersList.map((x) => x.slug));
 if (slugs.size !== brokersList.length) bad("broker slugs", "duplicate slug");
 else ok("broker slugs unique");
+
+const wrangler = readFileSync(resolve(root, "wrangler.toml"), "utf8");
+const wranglerHealth = readFileSync(resolve(root, "wrangler.health.toml"), "utf8");
+const health = readFileSync(resolve(root, "workers/health.js"), "utf8");
+const cd = readFileSync(resolve(root, ".github/workflows/cd.yml"), "utf8");
+const preview = readFileSync(resolve(root, ".github/workflows/preview.yml"), "utf8");
+
+const cfChecks = [
+  ["pages output dir", wrangler.includes('pages_build_output_dir = "dist"')],
+  ["pages project name", wrangler.includes('name = "optly-website"')],
+  ["health worker name", wranglerHealth.includes('name = "optlyouts-health"')],
+  ["health cron", wranglerHealth.includes("*/15 * * * *")],
+  ["health site var", wranglerHealth.includes("https://optlyouts.awakyn.ai")],
+  ["health fetch + scheduled", health.includes("async scheduled") && health.includes("async fetch")],
+  ["cd wrangler deploy", cd.includes("pages deploy dist") && cd.includes("cloudflare/wrangler-action@v3")],
+  ["cd health deploy", cd.includes("deploy --config wrangler.health.toml")],
+  ["preview wrangler deploy", preview.includes("pages deploy dist")],
+];
+
+for (const [name, cond] of cfChecks) {
+  if (cond) ok(name);
+  else bad(name, "assertion failed");
+}
+
+try {
+  const n = pack();
+  if (n !== PAGES_FILES.length) bad("cf-pack", `packed ${n}, expected ${PAGES_FILES.length}`);
+  else if (!existsSync(resolve(root, "dist/index.html")) || !existsSync(resolve(root, "dist/scan.js"))) {
+    bad("cf-pack", "dist missing index.html or scan.js");
+  } else {
+    ok(`cf-pack (${n} files)`);
+  }
+} catch (err) {
+  bad("cf-pack", err instanceof Error ? err.message : String(err));
+}
 
 console.log(`\n${pass.length} passed, ${fail.length} failed`);
 if (fail.length) {

@@ -52,22 +52,39 @@ The free scan is a **deterministic hash estimate**, not a live crawl of every br
 
 ---
 
-## CI/CD
+## Cloudflare automation
+
+Push to `main` deploys via **Wrangler Direct Upload**. Pull requests get a Pages preview URL. A Worker pings the live site every 15 minutes.
 
 ```
-PR / push → GitHub Actions CI (scripts/ci-check.mjs)
+PR / push → GitHub Actions CI (scripts/ci-check.mjs + cf-pack)
                  ↓
             push to main
                  ↓
-     Cloudflare Pages (Git integration)  →  optlyouts.awakyn.ai
+     Wrangler pages deploy dist/  →  optly-website  →  optlyouts.awakyn.ai
                  ↓
-     Optional Wrangler Direct Upload if CLOUDFLARE_API_TOKEN is set
+     wrangler deploy workers/health.js (cron */15)
+                 ↓
+     optional zone cache purge (CLOUDFLARE_ZONE_ID)
 ```
 
 | Workflow | When | What |
 |----------|------|------|
-| [`.github/workflows/ci.yml`](.github/workflows/ci.yml) | PR + every push | Required files, brand/canonical, 26-broker catalog, deterministic scan |
-| [`.github/workflows/cd.yml`](.github/workflows/cd.yml) | `main` + manual | Re-runs CI, then deploys. Pages Git connection is the default ship path |
+| [`.github/workflows/ci.yml`](.github/workflows/ci.yml) | PR + every push | Required files, brand, 26-broker scan, pack `dist/` |
+| [`.github/workflows/preview.yml`](.github/workflows/preview.yml) | pull requests | Direct-upload a Pages preview branch |
+| [`.github/workflows/cd.yml`](.github/workflows/cd.yml) | `main` + manual | Production Pages deploy + health Worker |
+
+### Arm the deploy (one-time)
+
+GitHub → **Settings → Secrets and variables → Actions**:
+
+| Secret | Required | Where to get it |
+|--------|----------|-----------------|
+| `CLOUDFLARE_API_TOKEN` | yes | [API tokens](https://dash.cloudflare.com/profile/api-tokens) — permissions: **Account → Cloudflare Pages → Edit** and **Account → Workers Scripts → Edit** |
+| `CLOUDFLARE_ACCOUNT_ID` | yes | Right rail of any zone in the Cloudflare dashboard |
+| `CLOUDFLARE_ZONE_ID` | no | Same right rail, for `awakyn.ai` — enables cache purge after deploy |
+
+Custom domain `optlyouts.awakyn.ai` is attached on the Pages project `optly-website`.
 
 Run CI locally:
 
@@ -75,7 +92,11 @@ Run CI locally:
 node scripts/ci-check.mjs
 ```
 
-Optional Wrangler fallback — add repo secrets `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`. Until those exist, CD still passes; Pages already ships `main`.
+Pack assets without deploying:
+
+```bash
+node scripts/cf-pack.mjs
+```
 
 ---
 
@@ -86,4 +107,7 @@ Optional Wrangler fallback — add repo secrets `CLOUDFLARE_API_TOKEN` and `CLOU
 - `privacy.html` / `terms.html` — legal
 - `scan.js` — broker catalog + exposure engine
 - `_headers` / `_redirects` — Cloudflare Pages config
-- `scripts/ci-check.mjs` — CI gate used by GitHub Actions
+- `wrangler.toml` — Pages project (`dist/`)
+- `wrangler.health.toml` + `workers/health.js` — 15-minute uptime Worker
+- `scripts/ci-check.mjs` — CI gate
+- `scripts/cf-pack.mjs` — Pages asset pack

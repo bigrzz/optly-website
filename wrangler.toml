@@ -1,0 +1,5 @@
+# OptlyOuts — Cloudflare Pages (static marketing site)
+# Project: optly-website  →  https://optlyouts.awakyn.ai
+name = "optly-website"
+compatibility_date = "2026-08-21"
+pages_build_output_dir = "dist"

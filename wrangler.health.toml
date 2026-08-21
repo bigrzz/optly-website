@@ -1,0 +1,11 @@
+# OptlyOuts — Cloudflare Worker (cron + on-demand health check)
+name = "optlyouts-health"
+main = "workers/health.js"
+compatibility_date = "2026-08-21"
+workers_dev = true
+
+[triggers]
+crons = ["*/15 * * * *"]
+
+[vars]
+SITE_URL = "https://optlyouts.awakyn.ai"

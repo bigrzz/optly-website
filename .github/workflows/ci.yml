@@ -30,5 +30,11 @@ jobs:
       - name: Required files, brand, scan engine
         run: node scripts/ci-check.mjs
 
-      - name: Syntax-check scan.js
-        run: node --check scan.js
+      - name: Syntax-check scan.js + health Worker
+        run: |
+          node --check scan.js
+          node --check workers/health.js
+          node --check scripts/cf-pack.mjs
+
+      - name: Pack Pages assets
+        run: node scripts/cf-pack.mjs
