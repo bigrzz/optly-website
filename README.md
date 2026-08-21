@@ -52,6 +52,33 @@ The free scan is a **deterministic hash estimate**, not a live crawl of every br
 
 ---
 
+## CI/CD
+
+```
+PR / push → GitHub Actions CI (scripts/ci-check.mjs)
+                 ↓
+            push to main
+                 ↓
+     Cloudflare Pages (Git integration)  →  optlyouts.awakyn.ai
+                 ↓
+     Optional Wrangler Direct Upload if CLOUDFLARE_API_TOKEN is set
+```
+
+| Workflow | When | What |
+|----------|------|------|
+| [`.github/workflows/ci.yml`](.github/workflows/ci.yml) | PR + every push | Required files, brand/canonical, 26-broker catalog, deterministic scan |
+| [`.github/workflows/cd.yml`](.github/workflows/cd.yml) | `main` + manual | Re-runs CI, then deploys. Pages Git connection is the default ship path |
+
+Run CI locally:
+
+```bash
+node scripts/ci-check.mjs
+```
+
+Optional Wrangler fallback — add repo secrets `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`. Until those exist, CD still passes; Pages already ships `main`.
+
+---
+
 ## Files
 
 - `index.html` — landing, scan, pricing, FAQ
@@ -59,3 +86,4 @@ The free scan is a **deterministic hash estimate**, not a live crawl of every br
 - `privacy.html` / `terms.html` — legal
 - `scan.js` — broker catalog + exposure engine
 - `_headers` / `_redirects` — Cloudflare Pages config
+- `scripts/ci-check.mjs` — CI gate used by GitHub Actions
