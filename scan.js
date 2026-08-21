@@ -96,7 +96,10 @@ function runExposureScan({ fullName, city, state }) {
       confidence: roll > 0.72 ? "likely" : "possible",
     });
   }
-  hits.sort((a, b) => a.broker.name.localeCompare(b.broker.name));
+  hits.sort(
+    (a, b) =>
+      a.broker.wave - b.broker.wave || a.broker.name.localeCompare(b.broker.name),
+  );
   const riskLevel = hits.length >= 12 ? "high" : hits.length >= 7 ? "medium" : "low";
   return { fullName: name, city: c, state: s, hits, riskLevel, scannedCount: BROKERS.length };
 }

@@ -64,8 +64,11 @@ const brandChecks = [
   ["index scan.js", index.includes('src="/scan.js"')],
   ["index scan form", index.includes('id="scan"')],
   ["index pricing", index.includes("$1.99") && index.includes("$14.99") && index.includes("$29.99")],
+  ["wave 1 copy", index.includes("Wave 1") && index.includes("16 people-search")],
+  ["26 brokers copy", index.includes("26 brokers") || index.includes("26 people-search")],
   ["no old Optly title", !index.includes("Optly – Remove")],
   ["brokers page", brokers.includes("Broker directory") && brokers.includes("scan.js")],
+  ["brokers wave filters", brokers.includes("Wave 1 (16)") && brokers.includes("data-wave")],
   ["privacy brand", privacy.includes("OptlyOuts") && privacy.includes("info@awakyn.ai")],
   ["terms brand", terms.includes("OptlyOuts") && terms.includes("Wisconsin")],
   ["sitemap host", sitemap.includes("https://optlyouts.awakyn.ai/")],
@@ -97,6 +100,10 @@ if (!Array.isArray(brokersList) || brokersList.length !== 26) {
 } else {
   ok("broker catalog (26)");
 }
+
+const wave1 = Array.isArray(brokersList) ? brokersList.filter((b) => b.wave === 1).length : 0;
+if (wave1 !== 16) bad("wave 1 count", `expected 16, got ${wave1}`);
+else ok("wave 1 count (16)");
 
 const a = sandbox.__run({ fullName: "Jane Smith", city: "Milwaukee", state: "WI" });
 const b = sandbox.__run({ fullName: "Jane Smith", city: "Milwaukee", state: "WI" });
