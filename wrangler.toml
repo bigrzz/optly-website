@@ -3,3 +3,6 @@
 name = "optly-website"
 compatibility_date = "2026-08-21"
 pages_build_output_dir = "dist"
+# wrangler.toml
+name = 'awakyn-email-worker'
+
